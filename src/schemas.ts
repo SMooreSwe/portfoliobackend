@@ -1,3 +1,5 @@
+import { projectList } from "./MockData/ProjectList.js";
+
 export const typeDefs = `#graphql
 
 type Button {
@@ -17,3 +19,9 @@ type Query{
     projects: [Project]
 }
 `;
+
+export const resolvers = {
+    Query: {
+        projects: () => projectList,
+    },
+};
