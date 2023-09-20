@@ -1,17 +1,13 @@
 import { projectList } from "./MockData/ProjectList.js";
+import { Project } from "./Models/Project.js";
 
 export const typeDefs = `#graphql
-
-type Button {
-    text: String,
-    href: String,
-    icon: String,
-}
 
 type Project {
     heading: String,
     blurb: String,
-    links: [Button]
+    deployed: String,
+    github: String,
     src: String,
 }
 
@@ -22,6 +18,6 @@ type Query{
 
 export const resolvers = {
     Query: {
-        projects: () => projectList,
+        projects: async () => await Project.findAll(),
     },
 };

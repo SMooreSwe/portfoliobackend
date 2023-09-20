@@ -7,6 +7,7 @@ export type Button = {
 export type Project = {
     heading: string,
     blurb: string,
-    links: Button[],
+    deployed?: string,
+    github?: string,
     src: string,
 }
