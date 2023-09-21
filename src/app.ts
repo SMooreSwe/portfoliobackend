@@ -18,14 +18,14 @@ const server = new ApolloServer({
   plugins: [ApolloServerPluginDrainHttpServer({ httpServer })],
 });
 
-// const corsOptions ={
-//    origin:process.env.FE_ORIGIN, 
-//    credentials:true,          
-//    optionSuccessStatus:200,
-// }
+const corsOptions ={
+   origin:process.env.FE_ORIGIN.split(' '), 
+   credentials:true,          
+   optionSuccessStatus:200,
+}
 
 await server.start();
 
-app.use('/', cors<cors.CorsRequest>({origin: process.env.FE_ORIGIN.split(' ')}), json(), expressMiddleware(server));
+app.use('/', cors<cors.CorsRequest>(corsOptions), json(), expressMiddleware(server));
 
 export default app;
