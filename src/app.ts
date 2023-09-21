@@ -19,7 +19,8 @@ const server = new ApolloServer({
 });
 
 const corsOptions ={
-   origin:'*', 
+   origin:process.env.FE_ORIGIN.split(' '), 
+   preflightContine: false,
    credentials:true,          
    optionSuccessStatus:200,
 }
