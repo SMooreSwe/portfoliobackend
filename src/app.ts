@@ -20,7 +20,8 @@ const server = new ApolloServer({
 
 const corsOptions ={
    origin:process.env.FE_ORIGIN.split(' '), 
-   credentials:true,          
+   credentials:true,  
+   headers: ["Content-Type"],        
    optionSuccessStatus:200,
 }
 
