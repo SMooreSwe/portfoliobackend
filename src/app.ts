@@ -27,6 +27,19 @@ const corsOptions ={
 
 await server.start();
 
-app.use('/', cors<cors.CorsRequest>(corsOptions), json(), expressMiddleware(server));
+const optionsHandler = ((req, res, next) => {
+   res.header("Access-Control-Allow-Origin", "*");
+   res.header(
+     "Access-Control-Allow-Headers",
+     "Origin, X-Requested-With, Content-Type, Accept, Authorization"
+   );
+ if (req.method == "OPTIONS") {
+   res.header("Access-Control-Allow-Methods", "PUT, POST, PATCH, DELETE, GET");
+   return res.status(200).json({});
+ }
+
+ next();
+});
+app.use('/', cors<cors.CorsRequest>(corsOptions), optionsHandler, json(), expressMiddleware(server));
 
 export default app;
