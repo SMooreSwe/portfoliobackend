@@ -20,7 +20,7 @@ const server = new ApolloServer({
 
 const corsOptions ={
    origin:process.env.FE_ORIGIN.split(' '), 
-   preflightContine: false,
+   preflightContine: true,
    credentials:true,          
    optionSuccessStatus:200,
 }
