@@ -14,6 +14,8 @@ This project uses Express, Apollo Server and Sequelize to create a GraphQL backe
 
 ## Next Steps
 
-As I develop this project, I intend to implement Mutations, allowing for additional projects to be added, or older projects deleted via the API. At present, the images are contained as local files and the database points to those files. In the future, I intend on hosting the images in a storage bucket and serving them as well. 
+~~As I develop this project, I intend to implement Mutations, allowing for additional projects to be added, or older projects deleted via the API. At present, the images are contained as local files and the database points to those files. In the future, I intend on hosting the images in a storage bucket and serving them as well.~~
+
+Due to database provisioning, this project has been decoupled until a replacement database can be found.
 
 I am currently considering how such calls would be made by the frontend, ie. would it be via an private Admin page or some other call. 
